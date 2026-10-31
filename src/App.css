@@ -1,0 +1,471 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: #233b31;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  --forest: #244b3a;
+  --muted: #78877b;
+  --gold: #b68b50;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(100% - 64px, 1180px);
+  margin: 0 auto;
+}
+
+.site-header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8e5dc;
+  font-family: Arial, sans-serif;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid #c6ad83;
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.header-note {
+  color: #849087;
+  font-size: 12px;
+  letter-spacing: 0.025em;
+}
+
+.install-button {
+  padding: 10px 16px;
+  border: 1px solid #b68b50;
+  border-radius: 2px;
+  background: #244b3a;
+  color: #fffdf8;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.install-button:hover {
+  background: #315b47;
+}
+
+.install-button:focus-visible {
+  outline: 2px solid #a77f48;
+  outline-offset: 3px;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 64px;
+  min-height: 570px;
+  padding: 64px 8.5%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-copy,
+.artwork {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  color: #718276;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero-copy .eyebrow span {
+  width: 21px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  margin: 0;
+  color: #203d30;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+}
+
+.hero h1 em {
+  color: #a77f48;
+  font-weight: 400;
+}
+
+.intro {
+  max-width: 390px;
+  margin: 25px 0 30px;
+  color: #68796e;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.read-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #bd9a68;
+  color: #315440;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 180ms ease, color 180ms ease;
+}
+
+.read-link:hover {
+  gap: 22px;
+  color: #a77f48;
+}
+
+.read-link:focus-visible,
+.wordmark:focus-visible {
+  outline: 2px solid #a77f48;
+  outline-offset: 5px;
+}
+
+.artwork {
+  width: min(100%, 340px);
+  margin: 0 auto;
+}
+
+.artwork-frame {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #d6c6a9;
+  background: #fffdf8;
+  box-shadow: 0 22px 55px rgb(52 61 48 / 12%);
+  transform: rotate(2deg);
+}
+
+.artwork-frame::before {
+  position: absolute;
+  z-index: -1;
+  inset: -10px 10px 10px -10px;
+  border: 1px solid #e6dece;
+  content: "";
+}
+
+.artwork img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.artwork figcaption {
+  margin-top: 21px;
+  color: #849087;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
+
+.artwork figcaption span {
+  margin-right: 7px;
+  color: var(--gold);
+  font-style: normal;
+}
+
+.hero-orb {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgb(187 169 135 / 20%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-orb-one {
+  top: -225px;
+  right: -120px;
+  width: 590px;
+  height: 590px;
+}
+
+.hero-orb-two {
+  top: -166px;
+  right: -60px;
+  width: 470px;
+  height: 470px;
+}
+
+.prayer-section {
+  padding: 58px 20px 82px;
+  background: #eeeee7;
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #8e815e;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #294536;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.prayer-card {
+  width: min(100%, 700px);
+  margin: 34px auto 0;
+  padding: 48px 72px 43px;
+  border: 1px solid #e7e1d4;
+  background: #fbfaf6;
+  box-shadow: 0 15px 50px rgb(43 59 47 / 5%);
+}
+
+.prayer-symbol {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 23px;
+  place-items: center;
+  border: 1px solid #dfcfb2;
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.prayer-lead {
+  margin: 0 0 16px;
+  color: #315340;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.prayer-body {
+  color: #68776c;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.prayer-body p {
+  margin: 0 0 16px;
+}
+
+.prayer-signoff {
+  margin: 28px 0 30px;
+  color: #385b45;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.prayer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #987b50;
+}
+
+.prayer-footer p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.prayer-footer p span {
+  display: block;
+  margin-top: 6px;
+  color: #92958a;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-rule {
+  width: 28px;
+  height: 1px;
+  background: #d7c8ac;
+}
+
+.amen {
+  margin: 28px 0 0;
+  color: #315340;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.amen span {
+  color: var(--gold);
+  font-size: 12px;
+  vertical-align: 4px;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px;
+  padding: 25px 0;
+  color: #889187;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+.install-hint {
+  flex-basis: 100%;
+  margin: 0;
+  color: #92958a;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.site-footer span:nth-child(2) {
+  color: var(--gold);
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    width: min(100% - 36px, 560px);
+  }
+
+  .site-header {
+    height: 72px;
+  }
+
+  .header-note {
+    max-width: 130px;
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    min-height: auto;
+    padding: 69px 8% 62px;
+  }
+
+  .hero h1 {
+    font-size: clamp(50px, 13vw, 70px);
+  }
+
+  .intro {
+    max-width: 440px;
+  }
+
+  .artwork {
+    width: min(73%, 300px);
+  }
+
+  .hero-orb-one {
+    top: 180px;
+    right: -290px;
+  }
+
+  .hero-orb-two {
+    top: 220px;
+    right: -220px;
+  }
+
+  .prayer-section {
+    padding: 50px 0 60px;
+  }
+
+  .prayer-card {
+    padding: 38px 25px 35px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wordmark {
+    gap: 7px;
+    font-size: 9px;
+  }
+
+  .wordmark-mark {
+    width: 27px;
+    height: 27px;
+  }
+
+  .prayer-body {
+    font-size: 15px;
+  }
+
+  .site-footer {
+    gap: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

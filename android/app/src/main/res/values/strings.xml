@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">A Quiet Moment</string>
+    <string name="title_activity_main">A Quiet Moment</string>
+    <string name="package_name">com.aquietmoment.app</string>
+    <string name="custom_url_scheme">com.aquietmoment.app</string>
+</resources>
